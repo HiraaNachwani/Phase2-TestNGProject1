@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG-Project1">
+
+    <!-- Define test classes to be included in the suite -->
+    <test name="HomePageTests">
+        <classes>
+            <class name="testClasses.HomePageTest"/>
+        </classes>
+    </test>
+
+</suite>
