@@ -13,15 +13,17 @@ public class HomePageTest extends BaseTest {
 
     // Test method to verify mouse hover and click functionality on the Home page
     @Test
-    public void T01_HomePageTest() {
+    public void T01_HomePageTest() throws InterruptedException {
         // Open the browser and navigate to the application URL
         OpenBrowser();
 
         // Instantiate HomePage object with the WebDriver instance from BaseTest
         HomePage homePage = new HomePage(BaseTest.driver);
+        homePage.assertPageTitle("Essence - Fashion Ecommerce Template");
 
         // Perform mouse hover action on the 'Pages' menu item
         homePage.mousehoverOnPagesMenu();
+        Thread.sleep(5000);
 
         // Click on the 'Contact' link under the 'Pages' menu
         homePage.clickPageMenuContact();
@@ -57,7 +59,7 @@ public class HomePageTest extends BaseTest {
         // Add address
         checkOutPage.enterFirstName("Hiraa");
         checkOutPage.enterLastName("Nachwani");
-        checkOutPage.selectCountryName("India");
+        //checkOutPage.selectCountryName("India");
         checkOutPage.enterStreetAddress("Vrindavan, Shiv Kailasa, Mihan");
         checkOutPage.enterPostalCode("441108");
         checkOutPage.enterTownCity("Nagpur");

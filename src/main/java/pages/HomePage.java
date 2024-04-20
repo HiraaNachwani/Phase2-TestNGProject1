@@ -6,6 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.HomePageObject;
+import org.testng.Assert;
 
 
 public class HomePage {
@@ -47,5 +48,11 @@ public class HomePage {
         Actions action = new Actions(driver);
         // Moving the mouse pointer to the 'Pages' menu item
         action.moveToElement(menuPagesElement).build().perform();
+    }
+
+    //Method to assert page title
+    public void assertPageTitle(String expectedTitle) {
+        String actualTitle = driver.getTitle();
+        Assert.assertEquals(actualTitle, expectedTitle, "Page title does not match expected");
     }
 }
